@@ -11,7 +11,7 @@ var RemotePlayer = function (index, game, player, startX, startY, startAngle, sc
   this.player = player
   this.alive = true
 
-  this.player = scene.add.sprite(x, y, 'dude')
+  this.player = scene.add.sprite(x, y, 'soldier')
 
   this.player.name = index.toString()
   // game.physics.enable(this.player, Phaser.Physics.ARCADE)

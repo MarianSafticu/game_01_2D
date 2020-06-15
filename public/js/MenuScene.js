@@ -12,23 +12,16 @@ class MenuScene extends Phaser.Scene{
         this.w = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         this.play_b.on('pointerdown',this.startGame);
         this.play = false;
-    }
-    update(){
-        // if(this.w.isDown && !this.play){
-        //     // game.scene.scenes[1].restart_game()
-        //     this.startGame();
-        //     this.play = true;
-        // }
-    }
-
-    resetGame(){
-        // game.scene.scenes[1].scene.restart()
-        
+        this.add.text(10,550,'W,A,S,D to move; click to shoot;\nthe shoot is in direction of the pointer' + game.score,{fontFamily:'Stencil',fontSize:25,color:'#fff'})
+        if (game.score){
+            this.add.text(170,100,'Your score was ' + game.score,{fontFamily:'Stencil',fontSize:50,color:'#f00'}) 
+        }
     }
     startGame(){
         game.scene.start("gameScene")
         game.scene.stop("mainMenu")
     }
+    // start game when player click on play
     onObjectClicked(gameObject, pointer){
         log(gameObject)
         if (gameObject == this.play_b){
